@@ -2,6 +2,7 @@ lst/
 obj/
 bin/
 build/
+!build/buildit.sh
 tmp/
 *.bin
 .kdev4

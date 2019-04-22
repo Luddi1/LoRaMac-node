@@ -36,7 +36,7 @@
     #include "sx126x-board.h"
 #elif defined( SX1272MB2DAS)
     #include "sx1272-board.h"
-#elif defined( SX1276MB1LAS ) || defined( SX1276MB1MAS )
+#elif defined( SX1276MB1LAS ) || defined( SX1276MB1MAS ) || defined( DRAGINO14 )
     #include "sx1276-board.h"
 #endif
 #include "board.h"
@@ -158,7 +158,7 @@ void BoardInitMcu( void )
         FifoInit( &Uart2.FifoRx, Uart2RxBuffer, UART2_FIFO_RX_SIZE );
         // Configure your terminal for 8 Bits data (7 data bit + 1 parity bit), no parity and no flow ctrl
         UartInit( &Uart2, UART_2, UART_TX, UART_RX );
-        UartConfig( &Uart2, RX_TX, 921600, UART_8_BIT, UART_1_STOP_BIT, NO_PARITY, NO_FLOW_CTRL );
+        UartConfig( &Uart2, RX_TX, 115200, UART_8_BIT, UART_1_STOP_BIT, NO_PARITY, NO_FLOW_CTRL );
 
         RtcInit( );
 
@@ -180,7 +180,7 @@ void BoardInitMcu( void )
 #elif defined( SX1272MB2DAS)
     SpiInit( &SX1272.Spi, SPI_1, RADIO_MOSI, RADIO_MISO, RADIO_SCLK, NC );
     SX1272IoInit( );
-#elif defined( SX1276MB1LAS ) || defined( SX1276MB1MAS )
+#elif defined( SX1276MB1LAS ) || defined( SX1276MB1MAS ) || defined( DRAGINO14 )
     SpiInit( &SX1276.Spi, SPI_1, RADIO_MOSI, RADIO_MISO, RADIO_SCLK, NC );
     SX1276IoInit( );
 #endif
@@ -211,7 +211,7 @@ void BoardDeInitMcu( void )
 #elif defined( SX1272MB2DAS)
     SpiDeInit( &SX1272.Spi );
     SX1272IoDeInit( );
-#elif defined( SX1276MB1LAS ) || defined( SX1276MB1MAS )
+#elif defined( SX1276MB1LAS ) || defined( SX1276MB1MAS ) || defined( DRAGINO14 )
     SpiDeInit( &SX1276.Spi );
     SX1276IoDeInit( );
 #endif
