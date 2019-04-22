@@ -1,7 +1,8 @@
 lst/
 obj/
 bin/
-build/
+!build/
+build/*
 !build/buildit.sh
 tmp/
 *.bin
