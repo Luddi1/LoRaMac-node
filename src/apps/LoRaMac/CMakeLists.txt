@@ -23,8 +23,8 @@ cmake_minimum_required(VERSION 3.6)
 #---------------------------------------------------------------------------------------
 
 # Allow switching of sub projects
-set(SUB_PROJECT_LIST classA classB classC periodic-uplink-lpp fuota-test-01)
-set(SUB_PROJECT classA CACHE STRING "Default sub project is Class A")
+set(SUB_PROJECT_LIST classA classB classC periodic-uplink-lpp fuota-test-01 myClassAProject)
+set(SUB_PROJECT myClassAProject CACHE STRING "Default sub project is myClassAProject")
 set_property(CACHE SUB_PROJECT PROPERTY STRINGS ${SUB_PROJECT_LIST})
 
 # Allow switching of active region
