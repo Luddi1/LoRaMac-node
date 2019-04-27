@@ -96,6 +96,34 @@ elseif(SUB_PROJECT STREQUAL fuota-test-01)
         "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/packages/LmhpRemoteMcastSetup.c"
     )
 
+elseif(SUB_PROJECT STREQUAL myClassAProject)
+
+    #---------------------------------------------------------------------------------------
+    # Application common features handling
+    #---------------------------------------------------------------------------------------
+    list(APPEND ${PROJECT_NAME}_COMMON
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandlerMsgDisplay.c"
+        "${CMAKE_CURRENT_LIST_DIR}/common/NvmCtxMgmt.c"
+    )
+
+    #---------------------------------------------------------------------------------------
+    # Application LoRaMac handler
+    #---------------------------------------------------------------------------------------
+    list(APPEND ${PROJECT_NAME}_LMH
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/LmHandler.c"
+    )
+
+    #---------------------------------------------------------------------------------------
+    # LoRaMac handler applicative packages
+    #---------------------------------------------------------------------------------------
+    list(APPEND ${PROJECT_NAME}_LMHP
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/packages/FragDecoder.c"
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/packages/LmhpClockSync.c"
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/packages/LmhpCompliance.c"
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/packages/LmhpFragmentation.c"
+        "${CMAKE_CURRENT_LIST_DIR}/common/LmHandler/packages/LmhpRemoteMcastSetup.c"
+    )
+
 else() #if(SUB_PROJECT STREQUAL classA OR SUB_PROJECT STREQUAL classB OR SUB_PROJECT STREQUAL classC)
 
     #---------------------------------------------------------------------------------------
