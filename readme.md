@@ -1,5 +1,16 @@
 # LoRaWAN endpoint stack implementation and example projects
 
+---------------------------
+## Changes for Dragino Board to work
+
+* Added `src/boards/NucleoL476/dragino14-board.c` based on `sx1276mb1mas-board.c`
+* Change the pins in src/boards/NucleoL476/board-config.h accordingly.
+* In `sx1276-board.c` change `RF_PACONFIG_PASELECT_RFO` to `RF_PACONFIG_PASELECT_PABOOST`.
+
+
+With help of the TTN community: https://www.thethingsnetwork.org/forum/t/loramac-node-not-sending-nucleol476rg-dragino-1-4/25273/15
+
+---------------------------
       ______                              _
      / _____)             _              | |
     ( (____  _____ ____ _| |_ _____  ____| |__

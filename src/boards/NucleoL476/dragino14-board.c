@@ -235,7 +235,7 @@ void SX1276SetRfTxPower( int8_t power )
 
 static uint8_t SX1276GetPaSelect( uint32_t channel )
 {
-    return RF_PACONFIG_PASELECT_RFO;
+    return RF_PACONFIG_PASELECT_PABOOST;
 }
 
 void SX1276SetAntSwLowPower( bool status )
